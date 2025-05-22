@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${author.name} + ' | Author Details'"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="container mt-4">
+    <h1 th:text="${author.name}"></h1>
+    <p class="lead" th:text="${author.bio}"></p>
+    
+    <h2 class="mt-4">Books by this Author</h2>
+    <ul th:if="${not books.isEmpty()}" class="list-group">
+        <li th:each="book : ${books}" class="list-group-item">
+            <a th:href="@{/books/{id}(id=${book.id})}" th:text="${book.title}"></a>
+            (<span th:text="${book.publicationYear}"></span>)
+        </li>
+    </ul>
+    <p th:if="${books.isEmpty()}" class="text-muted">No books found.</p>
+    
+    <div class="mt-3">
+        <a th:href="@{/authors/edit/{id}(id=${author.id})}" class="btn btn-warning">Edit Author</a>
+        <a th:href="@{/authors}" class="btn btn-secondary">Back to Authors</a>
+    </div>
+</body>
+</html>

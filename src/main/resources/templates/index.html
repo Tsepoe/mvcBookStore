@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bookstore Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="text-center my-5">
+            <h1 class="display-4">📚 Bookstore Management</h1>
+            <p class="lead">Manage your library collection with ease</p>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section mb-5 p-4 bg-light rounded">
+            <h2>Welcome!</h2>
+            <p>
+                This system helps you manage books and authors in your library. 
+                Get started by exploring the options below.
+            </p>
+        </section>
+
+      
+    <div class="container my-4">
+
+        <!-- Action Cards -->
+        <div class="row">
+            <!-- Books Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 action-card">
+                    <div class="card-body">
+                        <h3 class="card-title">📖 Books Management</h3>
+                        <p class="card-text">View, add, edit, or delete books in your collection.</p>
+                        <div class="d-grid gap-2">
+                            <a th:href="@{/books}" class="btn btn-primary">View All Books</a>
+                            <a th:href="@{/books/new}" class="btn btn-outline-primary">Add New Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Authors Card -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 action-card">
+                    <div class="card-body">
+                        <h3 class="card-title">✍️ Authors Management</h3>
+                        <p class="card-text">Manage authors and their biographical information.</p>
+                        <div class="d-grid gap-2">
+                            <a th:href="@{/authors}" class="btn btn-primary">View All Authors</a>
+                            <a th:href="@{/authors/new}" class="btn btn-outline-primary">Add New Author</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
